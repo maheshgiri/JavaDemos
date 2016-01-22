@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+        <cc:attribute name="usernameLable"/>
+        <cc:attribute name="usernameValue"/>
+        <cc:attribute name="passwordLable"/>
+        <cc:attribute name="passwordValue"/>
+        <cc:attribute name="loginButtonLable"/>
+        <cc:attribute name="loginButtonAction" method-signature="java.lang.String login()"/>
+        
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+         <h:form>
+            <h:message for="loginPanel" style="color: red;"/>
+            <h:panelGrid columns="2" id="loginPanel">
+                #{cc.attrs.usernameLable}:
+                <h:inputText value="#{cc.attrs.usernameValue}"/>
+                 #{cc.attrs.passwordLable}: 
+            <h:inputSecret id="password" value="#{cc.attrs.passwordValue}" />                          
+            </h:panelGrid>
+            <h:commandButton action="#{cc.attrs.loginButtonAction}" value="#{cc.attrs.loginButtonLable}"/>
+        </h:form>
+    </cc:implementation>
+</html>
