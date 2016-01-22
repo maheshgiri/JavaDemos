@@ -45,3 +45,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/SimpleApp/build/
+/JsfApp/dist/
+/JsfApp/build/
+/JsfApp/nbproject/private/
+/SimpleApp/nbproject/private/
+/CustomCompoApp/nbproject/private/
+/CustomCompoApp/build/
