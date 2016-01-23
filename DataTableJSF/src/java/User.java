@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import java.util.Arrays;
+import javax.faces.context.FacesContext;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -66,7 +67,8 @@ public class User implements Serializable {
 
    public String saveEmployees(){
       //set "canEdit" of all employees to false 
-      for (Employee employee : employees){
+
+       for (Employee employee : employees){
          employee.setCanEdit(false);
       }		
       return null;
