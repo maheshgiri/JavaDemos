@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+     <h:outputStylesheet library="css" name="styles.css"  /> 	
+    </h:head>
+    <h:body>
+        <h:form>
+        <h:dataTable value="#{user.employees}" styleClass="employeeTable"
+         headerClass="employeeTableHeader"
+         rowClasses="employeeTableOddRow,employeeTableEvenRow"
+         var="employee" id="update">
+            <h:column >
+                <f:facet name="header">Name</f:facet>
+                <h:inputText value="#{employee.name}" rendered="#{employee.canEdit}"/>
+                <h:outputText value="#{employee.name}" rendered="#{not employee.canEdit}"/>                
+            </h:column>
+            <h:column>
+                <f:facet name="header">Department</f:facet>
+                <h:inputText value="#{employee.department}" rendered="#{employee.canEdit}"/>
+                <h:outputText value="#{employee.department}" rendered="#{not employee.canEdit}"/>                
+                #{employee.department}
+            </h:column>        
+            <h:column>
+                <f:facet name="header">Age</f:facet>
+                <h:inputText value="#{employee.age}" rendered="#{employee.canEdit}"/>
+                <h:outputText value="#{employee.age}" rendered="#{not employee.canEdit}"/>                
+                #{employee.age}
+            </h:column>
+            
+ <h:column>
+            <f:facet name="header">Salary</f:facet>
+            <h:inputText value="#{employee.salary}" rendered="#{employee.canEdit}"/>
+                <h:outputText value="#{employee.salary}" rendered="#{not employee.canEdit}"/>                
+            #{employee.salary}
+         </h:column>
+            
+            <h:column >
+                <f:facet name="header">Delete</f:facet>
+                <h:commandButton action="#{user.deleteEmployee(employee)}" value="delete">
+       
+                </h:commandButton>
+            </h:column>
+            <h:column >
+                <f:facet name="header">Edit</f:facet>
+                <h:commandButton action="#{user.editEmployee(employee)}" value="Edit" rendered="#{not employee.canEdit}">
+       
+                </h:commandButton>
+                
+            </h:column>
+            
+        </h:dataTable>
+        
+        
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><h:inputText id="name" value="#{user.name}"/></td>
+            </tr>
+            <tr>
+                <td>Department:</td>
+                <td><h:inputText id="dept" value="#{user.department}"/></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><h:inputText id ="age" value="#{user.age}"/></td>
+            </tr>
+            <tr>
+                <td>Salary:</td>
+                <td><h:inputText id="sal" value="#{user.salary}"/></td>
+            </tr>
+            <tr>
+                <td>        
+                <h:commandButton id="com" action="#{user.addEmployee}" value="Add Employee">
+                                <f:ajax execute="name dept age sal" render="update" /> 
+                </h:commandButton>
+           </td>
+            </tr>
+            <tr>
+                <td>        
+                    <h:commandButton  action="#{user.saveEmployees}" value="Save">
+                                 
+                </h:commandButton>
+           </td>
+            </tr>
+     
+        </table>
+            
+            
+        </h:form>
+    </h:body>
+</html>
+
