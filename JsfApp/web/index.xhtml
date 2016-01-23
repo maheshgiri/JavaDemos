@@ -8,11 +8,18 @@
     </h:head>
     <h:body>
         <h:form>
+            <h:inputText id="name" value="#{student.name}">
+                <f:validator validatorId="loginValidator" />
+            </h:inputText>
+            <h:inputSecret  value="#{student.password}"/>
             <h:selectOneListbox value="#{student.country}">
                 <f:selectItems value="#{student.countryList}"/>
                
         </h:selectOneListbox>
-            <h:commandButton action="newxhtml" value="Submit"/>
+            <h:commandButton  value="Submit">
+                </h:commandButton>
+            <h:messages for="name" style="color: red" ></h:messages>
+
         </h:form>
 
 </h:body>
