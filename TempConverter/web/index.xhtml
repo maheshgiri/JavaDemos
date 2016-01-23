@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+  <h:form>
+    <h:panelGrid columns="2">
+      <h:outputLabel value="Celsius"></h:outputLabel>
+      <h:inputText  value="#{temperatureConverter.celsius}"></h:inputText>
+    </h:panelGrid>
+    <h:commandButton action="#{temperatureConverter.celsiusToFahrenheit}" value="Calculate"></h:commandButton>
+    <h:commandButton action="#{temperatureConverter.reset}" value="Reset"></h:commandButton>
+    <h:messages layout="table"></h:messages>
+  </h:form>
+  
+  
+  <h:panelGroup rendered="#{temperatureConverter.initial!=true}">
+  <h3> Result </h3>
+  <h:outputLabel value="Fahrenheit "></h:outputLabel>
+  <h:outputLabel value="#{temperatureConverter.fahrenheit}"></h:outputLabel>
+  </h:panelGroup>
+</f:view>
+    </h:body>
+</html>
+
