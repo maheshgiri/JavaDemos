@@ -22,20 +22,20 @@
                 <f:facet name="header">Department</f:facet>
                 <h:inputText value="#{employee.department}" rendered="#{employee.canEdit}"/>
                 <h:outputText value="#{employee.department}" rendered="#{not employee.canEdit}"/>                
-                #{employee.department}
+               
             </h:column>        
             <h:column>
                 <f:facet name="header">Age</f:facet>
                 <h:inputText value="#{employee.age}" rendered="#{employee.canEdit}"/>
                 <h:outputText value="#{employee.age}" rendered="#{not employee.canEdit}"/>                
-                #{employee.age}
+               
             </h:column>
             
  <h:column>
             <f:facet name="header">Salary</f:facet>
             <h:inputText value="#{employee.salary}" rendered="#{employee.canEdit}"/>
                 <h:outputText value="#{employee.salary}" rendered="#{not employee.canEdit}"/>                
-            #{employee.salary}
+            
          </h:column>
             
             <h:column >
