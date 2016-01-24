@@ -8,20 +8,35 @@
     </h:head>
     <h:body>
         <h:form>
-            <h:inputText id="name" value="#{student.name}">
+            Username:<h:inputText id="name" value="#{student.name}">
                 <f:validator validatorId="loginValidator" />
             </h:inputText>
-            <h:inputSecret  value="#{student.password}"/>
-            <h:selectOneListbox value="#{student.country}">
-                <f:selectItems value="#{student.countryList}"/>
-               
-        </h:selectOneListbox>
+            Password: <h:inputSecret  value="#{student.password}"/>
             <h:commandButton  value="Submit">
                 </h:commandButton>
             <h:messages for="name" style="color: red" ></h:messages>
-
         </h:form>
-
-</h:body>
+        <h:form>
+        <h:selectOneMenu value="#{student.country}" onchange="submit()" valueChangeListener="#{student.onchangevalue}">
+                <f:selectItems value="#{student.countryList}"/>
+            </h:selectOneMenu>
+ Country Name: 		 
+         <h:outputText id="country" value="#{student.country}"
+             />	
+         
+        
+        </h:form>
+        <h:form
+            >  <h:commandButton value="Action" actionListener="#{student.changeValue}" action="#{student.result}"/>
+       </h:form>
+        <h:form id="form">
+		
+	  <h:commandButton id="submitButton" 
+		value="Submit" action="newxhtml" >
+		<f:actionListener type="com.hungry.example.NormalActionListener" />
+	  </h:commandButton>
+				
+	</h:form>
+    </h:body>
 </html>
 
