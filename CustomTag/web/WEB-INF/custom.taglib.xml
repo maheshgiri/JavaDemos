@@ -1,0 +1,20 @@
+
+<!--
+    Document   : taglib.xml
+    Created on : January 24, 2016, 5:31 PM
+    Author     : Hungry
+    Description:
+        Purpose of the document follows.
+-->
+
+<!DOCTYPE facelet-taglib PUBLIC
+"-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN"
+"http://java.sun.com/dtd/facelet-taglib_1_0.dtd">
+<facelet-taglib>
+   <namespace>http://custom.io.com/facelets</namespace>
+   <tag>
+      <tag-name>buttonPanel</tag-name>
+     
+      <source>tags/com/hungry/buttonPanel.xhtml</source>
+   </tag>
+</facelet-taglib>
